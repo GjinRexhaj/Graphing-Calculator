@@ -161,11 +161,3 @@ class Ui_MainWindow(object):
         self.menuInfo.setTitle(QCoreApplication.translate("MainWindow", u"Info", None))
     # retranslateUi
 
-if __name__ == "__main__":
-    import sys
-    app = QApplication(sys.argv)
-    MainWindow = QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
-    sys.exit(app.exec())

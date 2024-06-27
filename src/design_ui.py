@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'MainWindow.ui'
+## Form generated from reading UI file 'design.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -19,6 +19,8 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
 from PySide6.QtWidgets import (QApplication, QFrame, QMainWindow, QMenu,
     QMenuBar, QProgressBar, QPushButton, QScrollArea,
     QSizePolicy, QStatusBar, QWidget)
+
+from mplwidget import MplWidget
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -62,7 +64,7 @@ class Ui_MainWindow(object):
         self.graphingFrame.setGeometry(QRect(320, 20, 601, 601))
         self.graphingFrame.setFrameShape(QFrame.Shape.StyledPanel)
         self.graphingFrame.setFrameShadow(QFrame.Shadow.Raised)
-        self.graphingCanvas = QWidget(self.graphingFrame)
+        self.graphingCanvas = MplWidget(self.graphingFrame)
         self.graphingCanvas.setObjectName(u"graphingCanvas")
         self.graphingCanvas.setEnabled(True)
         self.graphingCanvas.setGeometry(QRect(0, 0, 601, 601))

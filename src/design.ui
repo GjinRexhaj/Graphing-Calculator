@@ -47,7 +47,7 @@
     <property name="frameShadow">
      <enum>QFrame::Shadow::Raised</enum>
     </property>
-    <widget class="QWidget" name="graphingCanvas" native="true">
+    <widget class="MplWidget" name="graphingCanvas" native="true">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -272,6 +272,14 @@
    </property>
   </action>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MplWidget</class>
+   <extends>QWidget</extends>
+   <header>mplwidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

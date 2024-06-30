@@ -1,3 +1,5 @@
+# mplwidget.py, creates zoom/pannable cartesian plane for graph widget
+
 from PySide6 import QtWidgets
 import numpy as np
 import matplotlib.pyplot as plt
@@ -34,15 +36,11 @@ class MplCanvas(FigureCanvas):
         plt.grid(color = 'blue', linewidth = 0.2)
 
         #zoom
-        disconnect_zoom = zoom_factory(self.ax)
+        #disconnect_zoom = zoom_factory(self.ax)
+        zoom_factory(self.ax)
 
         # panning
-        pan_handler = panhandler(fig)
-
-        #FigureCanvas.__init__(self, self.fig)
-        #FigureCanvas.setSizePolicy(self, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
-        #FigureCanvas.updateGeometry(self)
-
+        self.pan_handler = panhandler(fig)
 
 # Matplotlib widget
 class MplWidget(QtWidgets.QWidget):

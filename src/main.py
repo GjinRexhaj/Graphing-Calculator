@@ -1,7 +1,7 @@
 from PySide6 import QtWidgets
 import sys
 
-# Local Module Imports
+# Local app_framework import
 import app_framework as framework
 
 # Create GUI app

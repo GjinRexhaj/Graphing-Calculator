@@ -1,3 +1,5 @@
+# creates main window and sets gui as the output from qtDesigner
+
 from PySide6.QtWidgets import QApplication, QMainWindow
 import design_ui
 

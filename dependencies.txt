@@ -1,0 +1,7 @@
+python
+
+pip install pyside6
+pip insatll pyqt6
+pip install matplotlib
+pip install mpl_interactions
+pip install sympy

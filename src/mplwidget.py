@@ -44,6 +44,8 @@ class MplCanvas(FigureCanvas):
 
 # Matplotlib widget
 class MplWidget(QtWidgets.QWidget):
+    text = ''
+    
     def __init__(self, parent=None):
         QtWidgets.QWidget.__init__(self, parent)
         self.canvas = MplCanvas()

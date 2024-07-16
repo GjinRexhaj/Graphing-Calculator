@@ -6,6 +6,7 @@ import design_ui
 import numpy as np
 import matplotlib.pyplot as plt
 from sympy import *
+from mplwidget import MplCanvas
 
 # create main window in accordance with pyuic generated content
 class MyApp(QMainWindow, design_ui.Ui_MainWindow):
@@ -28,7 +29,7 @@ class MyApp(QMainWindow, design_ui.Ui_MainWindow):
         # TO-DO: take in text input, convert into lambda, then graph
         print("graph function has been clicked!")
         textlineInput = self.lineEdit.text()
-        print(textlineInput)
+        MplCanvas.plot(textlineInput)
 
     def clearGraph(self):
         print("graph has been cleared!")

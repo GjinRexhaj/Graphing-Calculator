@@ -7,6 +7,7 @@ from matplotlib.figure import Figure
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 import matplotlib
 from mpl_interactions import ioff, panhandler, zoom_factory
+from sympy import lambdify, sympify, symbols
 
 matplotlib.use('QT5Agg')
 
@@ -17,6 +18,8 @@ class MplCanvas(FigureCanvas):
 
         fig, self.ax = plt.subplots(figsize=(10,10))
         super().__init__(fig)
+
+        plt.ion()
         
         #make figure occupy as much space as possible
         fig.tight_layout()
@@ -41,6 +44,23 @@ class MplCanvas(FigureCanvas):
 
         # panning
         self.pan_handler = panhandler(fig)
+
+    # plots input to graph, called by app_framework in graph button connected method
+    def plot(input):
+        print('input to be plot: ' + str(input))
+        
+        # temp func
+        x_values = np.linspace(-100, 100, 100000) # 100000 points between -100 and 100 
+        y_values = [] 
+
+        # convert input into lambda
+        x = symbols('x')
+        symp_function = sympify(input)
+        f = lambdify(x, symp_function)
+
+        for x in x_values: 
+            y_values.append(f(x))
+        plt.plot(np.array(x_values), np.array(y_values))
 
 # Matplotlib widget
 class MplWidget(QtWidgets.QWidget):

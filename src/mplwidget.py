@@ -55,6 +55,8 @@ class MplCanvas(FigureCanvas):
         y_values = [] 
 
         # convert input into lambda
+        # TO-DO, create seperate lambda_parser.py class with static lambda parser method
+        # to process user input
         x = symbols('x')
         symp_function = sympify(input)
         f = lambdify(x, symp_function)
@@ -66,7 +68,10 @@ class MplCanvas(FigureCanvas):
     # clear graph and apply cartesian plane to cleared plot
     def clear():
         print('internal clear method ran')
+        plane = plt.gca()
         plt.cla()
+        plt.axes(plane)
+
 
 # Matplotlib widget
 class MplWidget(QtWidgets.QWidget):

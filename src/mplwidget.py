@@ -13,12 +13,13 @@ matplotlib.use('QT5Agg')
 
 # implemented MplCanvas
 class MplCanvas(FigureCanvas):
-    def __init__(self):
-        xmin, xmax, ymin, ymax = -10, 10, -10, 10
 
+    # constructor
+    def __init__(self):
         fig, self.ax = plt.subplots(figsize=(10,10))
         super().__init__(fig)
-
+        
+        xmin, xmax, ymin, ymax = -10, 10, -10, 10
         plt.ion()
         
         #make figure occupy as much space as possible
@@ -61,6 +62,11 @@ class MplCanvas(FigureCanvas):
         for x in x_values: 
             y_values.append(f(x))
         plt.plot(np.array(x_values), np.array(y_values))
+    
+    # clear graph and apply cartesian plane to cleared plot
+    def clear():
+        print('internal clear method ran')
+        plt.cla()
 
 # Matplotlib widget
 class MplWidget(QtWidgets.QWidget):

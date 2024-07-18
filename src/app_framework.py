@@ -33,6 +33,7 @@ class MyApp(QMainWindow, design_ui.Ui_MainWindow):
 
     def clearGraph(self):
         print("graph has been cleared!")
+        MplCanvas.clear()
 
     # Actionbar implementation
     def about(self):

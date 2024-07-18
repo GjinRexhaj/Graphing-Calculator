@@ -149,29 +149,41 @@
     <property name="title">
      <string>Info</string>
     </property>
-    <addaction name="actionHelp"/>
-    <addaction name="separator"/>
     <addaction name="actionAbout"/>
+    <addaction name="separator"/>
+    <addaction name="actionHelp"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuInfo"/>
   </widget>
   <action name="actionHelp">
+   <property name="icon">
+    <iconset theme="QIcon::ThemeIcon::HelpFaq"/>
+   </property>
    <property name="text">
     <string>Help</string>
    </property>
   </action>
   <action name="actionNew_Window">
+   <property name="icon">
+    <iconset theme="QIcon::ThemeIcon::WindowNew"/>
+   </property>
    <property name="text">
-    <string>New</string>
+    <string>New Window</string>
    </property>
   </action>
   <action name="actionSave_Image">
+   <property name="icon">
+    <iconset theme="QIcon::ThemeIcon::DriveHarddisk"/>
+   </property>
    <property name="text">
     <string>Save Image</string>
    </property>
   </action>
   <action name="actionAbout">
+   <property name="icon">
+    <iconset theme="QIcon::ThemeIcon::HelpAbout"/>
+   </property>
    <property name="text">
     <string>About</string>
    </property>

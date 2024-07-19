@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>550</width>
+    <width>771</width>
     <height>669</height>
    </rect>
   </property>
@@ -27,57 +27,7 @@
     <string notr="true"/>
    </property>
    <layout class="QGridLayout" name="gridLayout_2">
-    <item row="1" column="0" colspan="3">
-     <widget class="QLineEdit" name="lineEdit">
-      <property name="text">
-       <string/>
-      </property>
-      <property name="placeholderText">
-       <string>Enter function here... (Example: x+5)</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="0" colspan="3">
-     <widget class="QFrame" name="graphingFrame">
-      <property name="frameShape">
-       <enum>QFrame::Shape::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Shadow::Raised</enum>
-      </property>
-      <layout class="QGridLayout" name="gridLayout">
-       <item row="0" column="0">
-        <widget class="MplWidget" name="graphingCanvas" native="true">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>CrossCursor</cursorShape>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QProgressBar" name="graphingProgress">
-         <property name="font">
-          <font>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="value">
-          <number>0</number>
-         </property>
-         <property name="textVisible">
-          <bool>true</bool>
-         </property>
-         <property name="invertedAppearance">
-          <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
-    <item row="0" column="0">
+    <item row="3" column="0" colspan="2">
      <widget class="QPushButton" name="btn_createFunction">
       <property name="focusPolicy">
        <enum>Qt::FocusPolicy::StrongFocus</enum>
@@ -93,7 +43,49 @@
       </property>
      </widget>
     </item>
-    <item row="0" column="2">
+    <item row="1" column="3">
+     <widget class="QLineEdit" name="lineEdit">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="placeholderText">
+       <string>Enter function here... (Example: x+5)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="3" rowspan="4">
+     <widget class="QFrame" name="graphingFrame">
+      <property name="frameShape">
+       <enum>QFrame::Shape::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Shadow::Raised</enum>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="1">
+        <widget class="MplWidget" name="graphingCanvas" native="true">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="cursor">
+          <cursorShape>CrossCursor</cursorShape>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="4" column="0" rowspan="2" colspan="2">
+     <widget class="QFrame" name="frame">
+      <property name="frameShape">
+       <enum>QFrame::Shape::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Shadow::Raised</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0" colspan="2">
      <widget class="QPushButton" name="btn_clear">
       <property name="styleSheet">
        <string notr="true">background-color: rgb(237, 51, 59);
@@ -104,7 +96,7 @@
       </property>
      </widget>
     </item>
-    <item row="0" column="1">
+    <item row="1" column="0" colspan="2">
      <widget class="QPushButton" name="btn_graph">
       <property name="toolTip">
        <string>Click to graph current functions</string>
@@ -133,7 +125,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>550</width>
+     <width>771</width>
      <height>23</height>
     </rect>
    </property>

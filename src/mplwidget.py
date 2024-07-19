@@ -46,6 +46,7 @@ class MplCanvas(FigureCanvas):
         # panning
         self.pan_handler = panhandler(fig)
 
+
     # plots input to graph, called by app_framework in graph button connected method
     def plot(input):
         print('input to be plot: ' + str(input))
@@ -66,12 +67,10 @@ class MplCanvas(FigureCanvas):
         plt.plot(np.array(x_values), np.array(y_values))
     
     # clear graph and apply cartesian plane to cleared plot
-    def clear():
+    def clear(self, parent=None):
+        
         print('internal clear method ran')
-        plane = plt.gca()
         plt.cla()
-        plt.axes(plane)
-
 
 # Matplotlib widget
 class MplWidget(QtWidgets.QWidget):

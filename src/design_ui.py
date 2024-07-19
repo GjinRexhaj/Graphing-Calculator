@@ -17,8 +17,8 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QPainter, QPalette, QPixmap, QRadialGradient,
     QTransform)
 from PySide6.QtWidgets import (QApplication, QFrame, QGridLayout, QLineEdit,
-    QMainWindow, QMenu, QMenuBar, QProgressBar,
-    QPushButton, QSizePolicy, QWidget)
+    QMainWindow, QMenu, QMenuBar, QPushButton,
+    QSizePolicy, QWidget)
 
 from mplwidget import MplWidget
 
@@ -26,7 +26,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(550, 669)
+        MainWindow.resize(771, 669)
         sizePolicy = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -54,10 +54,17 @@ class Ui_MainWindow(object):
         self.centralwidget.setStyleSheet(u"")
         self.gridLayout_2 = QGridLayout(self.centralwidget)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
+        self.btn_createFunction = QPushButton(self.centralwidget)
+        self.btn_createFunction.setObjectName(u"btn_createFunction")
+        self.btn_createFunction.setFocusPolicy(Qt.FocusPolicy.StrongFocus)
+        self.btn_createFunction.setAutoDefault(True)
+
+        self.gridLayout_2.addWidget(self.btn_createFunction, 3, 0, 1, 2)
+
         self.lineEdit = QLineEdit(self.centralwidget)
         self.lineEdit.setObjectName(u"lineEdit")
 
-        self.gridLayout_2.addWidget(self.lineEdit, 1, 0, 1, 3)
+        self.gridLayout_2.addWidget(self.lineEdit, 1, 3, 1, 1)
 
         self.graphingFrame = QFrame(self.centralwidget)
         self.graphingFrame.setObjectName(u"graphingFrame")
@@ -70,35 +77,24 @@ class Ui_MainWindow(object):
         self.graphingCanvas.setEnabled(True)
         self.graphingCanvas.setCursor(QCursor(Qt.CursorShape.CrossCursor))
 
-        self.gridLayout.addWidget(self.graphingCanvas, 0, 0, 1, 1)
-
-        self.graphingProgress = QProgressBar(self.graphingFrame)
-        self.graphingProgress.setObjectName(u"graphingProgress")
-        font = QFont()
-        font.setBold(True)
-        self.graphingProgress.setFont(font)
-        self.graphingProgress.setValue(0)
-        self.graphingProgress.setTextVisible(True)
-        self.graphingProgress.setInvertedAppearance(False)
-
-        self.gridLayout.addWidget(self.graphingProgress, 1, 0, 1, 1)
+        self.gridLayout.addWidget(self.graphingCanvas, 0, 1, 1, 1)
 
 
-        self.gridLayout_2.addWidget(self.graphingFrame, 2, 0, 1, 3)
+        self.gridLayout_2.addWidget(self.graphingFrame, 2, 3, 4, 1)
 
-        self.btn_createFunction = QPushButton(self.centralwidget)
-        self.btn_createFunction.setObjectName(u"btn_createFunction")
-        self.btn_createFunction.setFocusPolicy(Qt.FocusPolicy.StrongFocus)
-        self.btn_createFunction.setAutoDefault(True)
+        self.frame = QFrame(self.centralwidget)
+        self.frame.setObjectName(u"frame")
+        self.frame.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame.setFrameShadow(QFrame.Shadow.Raised)
 
-        self.gridLayout_2.addWidget(self.btn_createFunction, 0, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.frame, 4, 0, 2, 2)
 
         self.btn_clear = QPushButton(self.centralwidget)
         self.btn_clear.setObjectName(u"btn_clear")
         self.btn_clear.setStyleSheet(u"background-color: rgb(237, 51, 59);\n"
 "")
 
-        self.gridLayout_2.addWidget(self.btn_clear, 0, 2, 1, 1)
+        self.gridLayout_2.addWidget(self.btn_clear, 2, 0, 1, 2)
 
         self.btn_graph = QPushButton(self.centralwidget)
         self.btn_graph.setObjectName(u"btn_graph")
@@ -106,12 +102,12 @@ class Ui_MainWindow(object):
         self.btn_graph.setAutoDefault(True)
         self.btn_graph.setFlat(False)
 
-        self.gridLayout_2.addWidget(self.btn_graph, 0, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.btn_graph, 1, 0, 1, 2)
 
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 550, 23))
+        self.menubar.setGeometry(QRect(0, 0, 771, 23))
         self.menuFile = QMenu(self.menubar)
         self.menuFile.setObjectName(u"menuFile")
         self.menuInfo = QMenu(self.menubar)
@@ -142,12 +138,12 @@ class Ui_MainWindow(object):
         self.actionNew_Window.setText(QCoreApplication.translate("MainWindow", u"New Window", None))
         self.actionSave_Image.setText(QCoreApplication.translate("MainWindow", u"Save Image", None))
         self.actionAbout.setText(QCoreApplication.translate("MainWindow", u"About", None))
-        self.lineEdit.setText("")
-        self.lineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Enter function here... (Example: x+5)", None))
 #if QT_CONFIG(tooltip)
         self.btn_createFunction.setToolTip(QCoreApplication.translate("MainWindow", u"Click to create a new function", None))
 #endif // QT_CONFIG(tooltip)
         self.btn_createFunction.setText(QCoreApplication.translate("MainWindow", u"New Function", None))
+        self.lineEdit.setText("")
+        self.lineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Enter function here... (Example: x+5)", None))
         self.btn_clear.setText(QCoreApplication.translate("MainWindow", u"Clear Graph", None))
 #if QT_CONFIG(tooltip)
         self.btn_graph.setToolTip(QCoreApplication.translate("MainWindow", u"Click to graph current functions", None))

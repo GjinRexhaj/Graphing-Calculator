@@ -7,6 +7,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sympy import *
 from mplwidget import MplCanvas
+from PySide6 import QtWidgets
+import sys
+import app_framework as framework
 
 # create main window in accordance with pyuic generated content
 class MyApp(QMainWindow, design_ui.Ui_MainWindow):
@@ -32,19 +35,29 @@ class MyApp(QMainWindow, design_ui.Ui_MainWindow):
         MplCanvas.plot(textlineInput)
 
     def clearGraph(self):
-        print("graph has been cleared!")
-        MplCanvas.clear()
+        dlg = QMessageBox(self)
+        dlg.setWindowTitle("Warning")
+        dlg.setText("This action will clear all graph data.<p>Would you like to proceed?")
+        dlg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+        dlg.setIcon(QMessageBox.Warning)
+        button = dlg.exec()
+
+        if button == QMessageBox.Yes:
+            print("Yes!")
+            print("graph has been cleared!")
+            MplCanvas.clear(self)
+        else:
+            print("No!")
+
 
     # Actionbar implementation
     def about(self):
-        QMessageBox.about(
-            self,
-            "About",
-            "<p>PySide6 Graphing Calculator</p>"
-            "<p>Version: 0.5 (dev)</p>"
-            "<p>Developed by: Gjin Rexhaj</p>"
-            "<p>github.com/gjinrexhaj</p>",
-        )
+        about = QMessageBox(self)
+        about.setWindowTitle("About")
+        about.setText("Graphing Calculator<p>Version 0.6 (dev)<p>Built with PySide6<p>Created by: Gjin Rexhaj<p>github.com/gjinrexhaj")
+        about.setStandardButtons(QMessageBox.Ok)
+        about.setIcon(QMessageBox.Information)
+        button = about.exec()
     
     def new(self):
         print('TO-DO: CREATE NEW WINDOW UPON INVOKATION OF THIS EVENT')

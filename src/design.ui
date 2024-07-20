@@ -17,7 +17,7 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Pyside6 Graphing Calculator</string>
   </property>
   <property name="styleSheet">
    <string notr="true"/>

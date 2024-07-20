@@ -134,7 +134,7 @@ class Ui_MainWindow(object):
     # setupUi
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Pyside6 Graphing Calculator", None))
         self.actionHelp.setText(QCoreApplication.translate("MainWindow", u"Help", None))
         self.actionNew_Window.setText(QCoreApplication.translate("MainWindow", u"New Window", None))
         self.actionSave_Image.setText(QCoreApplication.translate("MainWindow", u"Save Image", None))

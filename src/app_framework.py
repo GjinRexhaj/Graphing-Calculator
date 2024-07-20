@@ -29,7 +29,7 @@ class MyApp(QMainWindow, design_ui.Ui_MainWindow):
 
     # define custom signal functions
     def graphFunction(self):
-        # TO-DO: take in text input, convert into lambda, then graph
+        # TO-DO: catch exceptions
         print("graph function has been clicked!")
         textlineInput = self.lineEdit.text()
         MplCanvas.plot(textlineInput)
@@ -66,12 +66,9 @@ class MyApp(QMainWindow, design_ui.Ui_MainWindow):
         print('TO-DO: SAVE IMAGE UPON INVOKATION OF THIS EVENT')
 
     def help(self):
-        print('TO-DO: HELP DIALOG UPON INVOKATION OF THIS EVENT')
-
-
-
-    #def plot_data(self):
-    #    x=range(0,10)
-    #    y=range(0,20,2)
-        #self.plotWidget.canvas.ax.plot(x, y)
-        #self.plotWidget.canvas.draw()
+        help = QMessageBox(self)
+        help.setWindowTitle("Help")
+        help.setText("General Use:<p>Left-Click and drag to pan canvas. Scroll wheel up/down to zoom in/out.")
+        help.setStandardButtons(QMessageBox.Ok)
+        help.setIcon(QMessageBox.Information)
+        button = help.exec()

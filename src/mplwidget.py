@@ -28,13 +28,17 @@ class MplCanvas(FigureCanvas):
         #make x and y axis scales equal
         self.ax.set(xlim=(xmin-1, xmax+1), ylim=(ymin-1,ymax+1), aspect='equal')
 
+        # plot axis lines
+        plt.axhline(0, 0, 1, color='black')
+        plt.axvline(0, 0, 1, color='black')
+
         #create x and y axis
-        self.ax.spines['bottom'].set_position('zero')
-        self.ax.spines['left'].set_position('zero')
+        #self.ax.spines['bottom'].set_position('zero')
+        #self.ax.spines['left'].set_position('zero')
 
         #remove old axis
-        self.ax.spines['top'].set_visible(False)
-        self.ax.spines['right'].set_visible(False)
+        #self.ax.spines['top'].set_visible(False)
+        #self.ax.spines['right'].set_visible(False)
 
         # create grid
         plt.grid(color = 'blue', linewidth = 0.2)
@@ -52,7 +56,7 @@ class MplCanvas(FigureCanvas):
         print('input to be plot: ' + str(input))
         
         # temp func
-        x_values = np.linspace(-100, 100, 100000) # 100000 points between -100 and 100 
+        x_values = np.linspace(-1000, 1000, 100000) # 100000 points between -100 and 100 
         y_values = [] 
 
         # convert input into lambda
@@ -67,10 +71,16 @@ class MplCanvas(FigureCanvas):
         plt.plot(np.array(x_values), np.array(y_values))
     
     # clear graph and apply cartesian plane to cleared plot
-    def clear(self, parent=None):
+    def clear(self):
         
         print('internal clear method ran')
         plt.cla()
+        plt.grid(color = 'blue', linewidth = 0.2)
+
+        # plot axis lines
+        plt.axhline(0, 0, 1, color='black')
+        plt.axvline(0, 0, 1, color='black')
+
 
 # Matplotlib widget
 class MplWidget(QtWidgets.QWidget):

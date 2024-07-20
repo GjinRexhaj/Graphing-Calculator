@@ -87,8 +87,12 @@
     </item>
     <item row="2" column="0" colspan="2">
      <widget class="QPushButton" name="btn_clear">
+      <property name="toolTip">
+       <string>Click to clear graph</string>
+      </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(237, 51, 59);
+color: rgb(255, 255, 255);
 </string>
       </property>
       <property name="text">
@@ -99,7 +103,7 @@
     <item row="1" column="0" colspan="2">
      <widget class="QPushButton" name="btn_graph">
       <property name="toolTip">
-       <string>Click to graph current functions</string>
+       <string>Click to graph current function</string>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(87, 227, 137);</string>

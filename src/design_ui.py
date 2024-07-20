@@ -92,6 +92,7 @@ class Ui_MainWindow(object):
         self.btn_clear = QPushButton(self.centralwidget)
         self.btn_clear.setObjectName(u"btn_clear")
         self.btn_clear.setStyleSheet(u"background-color: rgb(237, 51, 59);\n"
+"color: rgb(255, 255, 255);\n"
 "")
 
         self.gridLayout_2.addWidget(self.btn_clear, 2, 0, 1, 2)
@@ -144,9 +145,12 @@ class Ui_MainWindow(object):
         self.btn_createFunction.setText(QCoreApplication.translate("MainWindow", u"New Function", None))
         self.lineEdit.setText("")
         self.lineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Enter function here... (Example: x+5)", None))
+#if QT_CONFIG(tooltip)
+        self.btn_clear.setToolTip(QCoreApplication.translate("MainWindow", u"Click to clear graph", None))
+#endif // QT_CONFIG(tooltip)
         self.btn_clear.setText(QCoreApplication.translate("MainWindow", u"Clear Graph", None))
 #if QT_CONFIG(tooltip)
-        self.btn_graph.setToolTip(QCoreApplication.translate("MainWindow", u"Click to graph current functions", None))
+        self.btn_graph.setToolTip(QCoreApplication.translate("MainWindow", u"Click to graph current function", None))
 #endif // QT_CONFIG(tooltip)
         self.btn_graph.setText(QCoreApplication.translate("MainWindow", u"Graph", None))
         self.menuFile.setTitle(QCoreApplication.translate("MainWindow", u"File", None))

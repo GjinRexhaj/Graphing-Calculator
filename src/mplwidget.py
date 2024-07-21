@@ -8,6 +8,7 @@ from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 import matplotlib
 from mpl_interactions import ioff, panhandler, zoom_factory
 from sympy import lambdify, sympify, symbols
+import qt_material
 
 matplotlib.use('QT5Agg')
 
@@ -24,6 +25,11 @@ class MplCanvas(FigureCanvas):
         
         #make figure occupy as much space as possible
         fig.tight_layout()
+
+        #change figure color
+        fig.set_facecolor('#31363b')
+        self.ax.tick_params(axis='x', colors='white')
+        self.ax.tick_params(axis='y', colors='white')
 
         #make x and y axis scales equal
         self.ax.set(xlim=(xmin-1, xmax+1), ylim=(ymin-1,ymax+1), aspect='equal')

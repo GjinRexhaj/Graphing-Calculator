@@ -45,6 +45,9 @@
     </item>
     <item row="1" column="3">
      <widget class="QLineEdit" name="lineEdit">
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
+      </property>
       <property name="text">
        <string/>
       </property>
@@ -91,9 +94,7 @@
        <string>Click to clear graph</string>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(237, 51, 59);
-color: rgb(255, 255, 255);
-</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string>Clear Graph</string>
@@ -106,7 +107,7 @@ color: rgb(255, 255, 255);
        <string>Click to graph current function</string>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(87, 227, 137);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string>Graph</string>

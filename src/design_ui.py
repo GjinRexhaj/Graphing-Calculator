@@ -63,6 +63,7 @@ class Ui_MainWindow(object):
 
         self.lineEdit = QLineEdit(self.centralwidget)
         self.lineEdit.setObjectName(u"lineEdit")
+        self.lineEdit.setStyleSheet(u"color: rgb(255, 255, 255);")
 
         self.gridLayout_2.addWidget(self.lineEdit, 1, 3, 1, 1)
 
@@ -91,15 +92,13 @@ class Ui_MainWindow(object):
 
         self.btn_clear = QPushButton(self.centralwidget)
         self.btn_clear.setObjectName(u"btn_clear")
-        self.btn_clear.setStyleSheet(u"background-color: rgb(237, 51, 59);\n"
-"color: rgb(255, 255, 255);\n"
-"")
+        self.btn_clear.setStyleSheet(u"")
 
         self.gridLayout_2.addWidget(self.btn_clear, 2, 0, 1, 2)
 
         self.btn_graph = QPushButton(self.centralwidget)
         self.btn_graph.setObjectName(u"btn_graph")
-        self.btn_graph.setStyleSheet(u"background-color: rgb(87, 227, 137);")
+        self.btn_graph.setStyleSheet(u"")
         self.btn_graph.setAutoDefault(True)
         self.btn_graph.setFlat(False)
 

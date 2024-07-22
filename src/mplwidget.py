@@ -1,6 +1,7 @@
 # mplwidget.py, creates zoom/pannable cartesian plane for graph widget
 
 from PySide6 import QtWidgets
+from PySide6.QtWidgets import QFileDialog
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.figure import Figure
@@ -85,6 +86,13 @@ class MplCanvas(FigureCanvas):
         # plot axis lines
         plt.axhline(0, 0, 1, color='black')
         plt.axvline(0, 0, 1, color='black')
+
+    # save figure as image
+    def save_image(self):
+        print('save image method ran')
+        
+        filename = QFileDialog.getExistingDirectory(self)
+        plt.savefig(filename + '/output.png')
 
 
 # Matplotlib widget

@@ -66,6 +66,7 @@ class MyApp(QMainWindow, design_ui.Ui_MainWindow):
 
     def save(self):
         print('TO-DO: SAVE IMAGE UPON INVOKATION OF THIS EVENT')
+        MplCanvas.save_image(self)
 
     def help(self):
         help = QMessageBox(self)

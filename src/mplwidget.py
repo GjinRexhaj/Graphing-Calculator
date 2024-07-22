@@ -9,6 +9,7 @@ import matplotlib
 from mpl_interactions import ioff, panhandler, zoom_factory
 from sympy import lambdify, sympify, symbols
 import qt_material
+import parser
 
 matplotlib.use('QT5Agg')
 
@@ -68,9 +69,7 @@ class MplCanvas(FigureCanvas):
         # convert input into lambda
         # TO-DO, create seperate lambda_parser.py class with static lambda parser method
         # to process user input
-        x = symbols('x')
-        symp_function = sympify(input)
-        f = lambdify(x, symp_function)
+        f = parser.parse_input(input)
 
         for x in x_values: 
             y_values.append(f(x))

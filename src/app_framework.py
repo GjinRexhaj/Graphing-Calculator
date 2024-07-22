@@ -21,6 +21,7 @@ class MyApp(QMainWindow, design_ui.Ui_MainWindow):
     # connect custom slots/signals
     def connectSignalSlots(self):
         self.btn_graph.clicked.connect(self.graphFunction)
+        self.lineEdit.returnPressed.connect(self.graphFunction)
         self.btn_clear.clicked.connect(self.clearGraph)
         self.actionAbout.triggered.connect(self.about)
         self.actionNew_Window.triggered.connect(self.new)

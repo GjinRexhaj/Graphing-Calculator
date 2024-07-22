@@ -34,7 +34,16 @@ class MyApp(QMainWindow, design_ui.Ui_MainWindow):
         # TO-DO: catch exceptions
         print("graph function has been clicked!")
         textlineInput = self.lineEdit.text()
-        MplCanvas.plot(textlineInput)
+        
+        try:
+            MplCanvas.plot(textlineInput)
+        except:
+            exception = QMessageBox(self)
+            exception.setWindowTitle("Error")
+            exception.setText("Error graphing function.<p>Input formatting error.")
+            exception.setStandardButtons(QMessageBox.Ok)
+            exception.setIcon(QMessageBox.Critical)
+            button = exception.exec()
 
     def clearGraph(self):
         dlg = QMessageBox(self)
@@ -56,7 +65,7 @@ class MyApp(QMainWindow, design_ui.Ui_MainWindow):
     def about(self):
         about = QMessageBox(self)
         about.setWindowTitle("About")
-        about.setText("Graphing Calculator<p>Version 0.6 (dev)<p>Built with PySide6<p>Created by: Gjin Rexhaj<p>github.com/gjinrexhaj")
+        about.setText("Graphing Calculator<p>Version 0.7 (dev). Built with PySide6. Developed by Gjin Rexhaj<p>github.com/gjinrexhaj")
         about.setStandardButtons(QMessageBox.Ok)
         about.setIcon(QMessageBox.Information)
         button = about.exec()
@@ -65,7 +74,6 @@ class MyApp(QMainWindow, design_ui.Ui_MainWindow):
         print('TO-DO: CREATE NEW WINDOW UPON INVOKATION OF THIS EVENT')
 
     def save(self):
-        print('TO-DO: SAVE IMAGE UPON INVOKATION OF THIS EVENT')
         MplCanvas.save_image(self)
 
     def help(self):

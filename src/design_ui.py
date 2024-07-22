@@ -54,18 +54,19 @@ class Ui_MainWindow(object):
         self.centralwidget.setStyleSheet(u"")
         self.gridLayout_2 = QGridLayout(self.centralwidget)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
-        self.btn_createFunction = QPushButton(self.centralwidget)
-        self.btn_createFunction.setObjectName(u"btn_createFunction")
-        self.btn_createFunction.setFocusPolicy(Qt.FocusPolicy.StrongFocus)
-        self.btn_createFunction.setAutoDefault(True)
-
-        self.gridLayout_2.addWidget(self.btn_createFunction, 3, 0, 1, 2)
-
         self.lineEdit = QLineEdit(self.centralwidget)
         self.lineEdit.setObjectName(u"lineEdit")
         self.lineEdit.setStyleSheet(u"color: rgb(255, 255, 255);")
 
         self.gridLayout_2.addWidget(self.lineEdit, 1, 3, 1, 1)
+
+        self.btn_graph = QPushButton(self.centralwidget)
+        self.btn_graph.setObjectName(u"btn_graph")
+        self.btn_graph.setStyleSheet(u"")
+        self.btn_graph.setAutoDefault(True)
+        self.btn_graph.setFlat(False)
+
+        self.gridLayout_2.addWidget(self.btn_graph, 1, 0, 1, 2)
 
         self.graphingFrame = QFrame(self.centralwidget)
         self.graphingFrame.setObjectName(u"graphingFrame")
@@ -81,28 +82,27 @@ class Ui_MainWindow(object):
         self.gridLayout.addWidget(self.graphingCanvas, 0, 1, 1, 1)
 
 
-        self.gridLayout_2.addWidget(self.graphingFrame, 2, 3, 4, 1)
+        self.gridLayout_2.addWidget(self.graphingFrame, 2, 3, 5, 1)
+
+        self.btn_clear = QPushButton(self.centralwidget)
+        self.btn_clear.setObjectName(u"btn_clear")
+        self.btn_clear.setStyleSheet(u"")
+
+        self.gridLayout_2.addWidget(self.btn_clear, 3, 0, 1, 2)
+
+        self.btn_createFunction = QPushButton(self.centralwidget)
+        self.btn_createFunction.setObjectName(u"btn_createFunction")
+        self.btn_createFunction.setFocusPolicy(Qt.FocusPolicy.StrongFocus)
+        self.btn_createFunction.setAutoDefault(True)
+
+        self.gridLayout_2.addWidget(self.btn_createFunction, 2, 0, 1, 2)
 
         self.frame = QFrame(self.centralwidget)
         self.frame.setObjectName(u"frame")
         self.frame.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame.setFrameShadow(QFrame.Shadow.Raised)
 
-        self.gridLayout_2.addWidget(self.frame, 4, 0, 2, 2)
-
-        self.btn_clear = QPushButton(self.centralwidget)
-        self.btn_clear.setObjectName(u"btn_clear")
-        self.btn_clear.setStyleSheet(u"")
-
-        self.gridLayout_2.addWidget(self.btn_clear, 2, 0, 1, 2)
-
-        self.btn_graph = QPushButton(self.centralwidget)
-        self.btn_graph.setObjectName(u"btn_graph")
-        self.btn_graph.setStyleSheet(u"")
-        self.btn_graph.setAutoDefault(True)
-        self.btn_graph.setFlat(False)
-
-        self.gridLayout_2.addWidget(self.btn_graph, 1, 0, 1, 2)
+        self.gridLayout_2.addWidget(self.frame, 4, 0, 3, 2)
 
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
@@ -138,20 +138,20 @@ class Ui_MainWindow(object):
         self.actionNew_Window.setText(QCoreApplication.translate("MainWindow", u"New Window", None))
         self.actionSave_Image.setText(QCoreApplication.translate("MainWindow", u"Save Image", None))
         self.actionAbout.setText(QCoreApplication.translate("MainWindow", u"About", None))
-#if QT_CONFIG(tooltip)
-        self.btn_createFunction.setToolTip(QCoreApplication.translate("MainWindow", u"Click to create a new function", None))
-#endif // QT_CONFIG(tooltip)
-        self.btn_createFunction.setText(QCoreApplication.translate("MainWindow", u"New Function", None))
         self.lineEdit.setText("")
         self.lineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Enter function here... (Example: x+5)", None))
+#if QT_CONFIG(tooltip)
+        self.btn_graph.setToolTip(QCoreApplication.translate("MainWindow", u"Click to graph current function", None))
+#endif // QT_CONFIG(tooltip)
+        self.btn_graph.setText(QCoreApplication.translate("MainWindow", u"Graph", None))
 #if QT_CONFIG(tooltip)
         self.btn_clear.setToolTip(QCoreApplication.translate("MainWindow", u"Click to clear graph", None))
 #endif // QT_CONFIG(tooltip)
         self.btn_clear.setText(QCoreApplication.translate("MainWindow", u"Clear Graph", None))
 #if QT_CONFIG(tooltip)
-        self.btn_graph.setToolTip(QCoreApplication.translate("MainWindow", u"Click to graph current function", None))
+        self.btn_createFunction.setToolTip(QCoreApplication.translate("MainWindow", u"Click to create a new function", None))
 #endif // QT_CONFIG(tooltip)
-        self.btn_graph.setText(QCoreApplication.translate("MainWindow", u"Graph", None))
+        self.btn_createFunction.setText(QCoreApplication.translate("MainWindow", u"New Function", None))
         self.menuFile.setTitle(QCoreApplication.translate("MainWindow", u"File", None))
         self.menuInfo.setTitle(QCoreApplication.translate("MainWindow", u"Info", None))
     # retranslateUi

@@ -10,8 +10,7 @@ app = QtWidgets.QApplication(sys.argv)
 form = framework.MyApp()
 
 # apply style sheet
-qt_material.apply_stylesheet(app, theme='dark_teal.xml')
-
+qt_material.apply_stylesheet(app, theme='dark_yellow.xml')
 
 # run app
 form.show()

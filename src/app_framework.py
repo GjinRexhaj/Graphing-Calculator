@@ -25,7 +25,6 @@ class MyApp(QMainWindow, design_ui.Ui_MainWindow):
         self.btn_clear.setProperty('class','danger')
         self.btn_clear.clicked.connect(self.clearGraph)
         self.actionAbout.triggered.connect(self.about)
-        self.actionNew_Window.triggered.connect(self.new)
         self.actionSave_Image.triggered.connect(self.save)
         self.actionHelp.triggered.connect(self.help)
 
@@ -40,7 +39,7 @@ class MyApp(QMainWindow, design_ui.Ui_MainWindow):
         except:
             exception = QMessageBox(self)
             exception.setWindowTitle("Error")
-            exception.setText("Error graphing function.<p>Input formatting error.")
+            exception.setText("Error graphing function: INPUT FORMATTING ERROR.<p>Here's an example of a correctly formatted function:<p>5*x^3 + sin(3*x)")
             exception.setStandardButtons(QMessageBox.Ok)
             exception.setIcon(QMessageBox.Critical)
             button = exception.exec()
@@ -69,9 +68,6 @@ class MyApp(QMainWindow, design_ui.Ui_MainWindow):
         about.setStandardButtons(QMessageBox.Ok)
         about.setIcon(QMessageBox.Information)
         button = about.exec()
-    
-    def new(self):
-        print('TO-DO: CREATE NEW WINDOW UPON INVOKATION OF THIS EVENT')
 
     def save(self):
         MplCanvas.save_image(self)

@@ -28,9 +28,10 @@ class MyApp(QMainWindow, design_ui.Ui_MainWindow):
         self.actionSave_Image.triggered.connect(self.save)
         self.actionHelp.triggered.connect(self.help)
 
-    # define custom signal functions
+    # define custom signal functions #
+
+    # graph function as specified in lineEdit
     def graphFunction(self):
-        # TO-DO: catch exceptions
         print("graph function has been clicked!")
         textlineInput = self.lineEdit.text()
         
@@ -44,6 +45,7 @@ class MyApp(QMainWindow, design_ui.Ui_MainWindow):
             exception.setIcon(QMessageBox.Critical)
             button = exception.exec()
 
+    # clear canvas of all plotted functions
     def clearGraph(self):
         dlg = QMessageBox(self)
         dlg.setWindowTitle("Warning")
@@ -60,7 +62,9 @@ class MyApp(QMainWindow, design_ui.Ui_MainWindow):
             print("No!")
 
 
-    # Actionbar implementation
+    # Actionbar implementation #
+
+    # implemented 'about' dialog
     def about(self):
         about = QMessageBox(self)
         about.setWindowTitle("About")
@@ -69,9 +73,11 @@ class MyApp(QMainWindow, design_ui.Ui_MainWindow):
         about.setIcon(QMessageBox.Information)
         button = about.exec()
 
+    # implemented 'save' function
     def save(self):
         MplCanvas.save_image(self)
 
+    # implemented 'help' dialog
     def help(self):
         help = QMessageBox(self)
         help.setWindowTitle("Help")

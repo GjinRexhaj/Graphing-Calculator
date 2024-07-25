@@ -40,14 +40,6 @@ class MplCanvas(FigureCanvas):
         plt.axhline(0, 0, 1, color='black')
         plt.axvline(0, 0, 1, color='black')
 
-        #create x and y axis
-        #self.ax.spines['bottom'].set_position('zero')
-        #self.ax.spines['left'].set_position('zero')
-
-        #remove old axis
-        #self.ax.spines['top'].set_visible(False)
-        #self.ax.spines['right'].set_visible(False)
-
         # create grid
         plt.grid(color = 'blue', linewidth = 0.2)
 
@@ -63,15 +55,14 @@ class MplCanvas(FigureCanvas):
     def plot(input):
         print('input to be plot: ' + str(input))
         
-        # temp func
+        # setup
         x_values = np.linspace(-1000, 1000, 100000) # 100000 points between -100 and 100 
         y_values = [] 
 
-        # convert input into lambda
-        # TO-DO, create seperate lambda_parser.py class with static lambda parser method
-        # to process user input
+        # call parser to convert input into lambda
         f = parser.parse_input(input)
 
+        # plot values
         for x in x_values: 
             y_values.append(f(x))
         plt.plot(np.array(x_values), np.array(y_values))

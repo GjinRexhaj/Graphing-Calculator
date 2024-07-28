@@ -68,7 +68,7 @@ class MyApp(QMainWindow, design_ui.Ui_MainWindow):
     def about(self):
         about = QMessageBox(self)
         about.setWindowTitle("About")
-        about.setText("Graphing Calculator<p>Version 0.7 (dev). Built with PySide6. Developed by Gjin Rexhaj<p>github.com/gjinrexhaj")
+        about.setText("Graphing Calculator<p>Version 1.0.0. Built with PySide6. Developed by Gjin Rexhaj<p>github.com/gjinrexhaj")
         about.setStandardButtons(QMessageBox.Ok)
         about.setIcon(QMessageBox.Information)
         button = about.exec()

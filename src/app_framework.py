@@ -2,6 +2,7 @@
 # contains custom signal/slot functions and their respective implementations
 
 from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox
+from PySide6.QtCore import QTimer
 import design_ui
 import numpy as np
 import matplotlib.pyplot as plt
@@ -10,23 +11,36 @@ from mplwidget import MplCanvas
 from PySide6 import QtWidgets
 import sys
 import app_framework as framework
+import time
 
 # create main window in accordance with pyuic generated content
-class MyApp(QMainWindow, design_ui.Ui_MainWindow):
+class MyApp(QMainWindow, design_ui.Ui_MainWindow):    
     def __init__(self, parent=None):
+
+        # create timer for FPS counter
+        self.timer = QTimer()
+        self.timer.setInterval(100) # 0.1 seconds
+        self.timer.start()
+
         super().__init__(parent)
         self.setupUi(self)
+
         self.connectSignalSlots()
+
+        print('init method for app framework method called')
+
+
 
     # connect custom slots/signals
     def connectSignalSlots(self):
-        self.btn_graph.clicked.connect(self.graphFunction)
-        self.lineEdit.returnPressed.connect(self.graphFunction)
-        self.btn_clear.setProperty('class','danger')
-        self.btn_clear.clicked.connect(self.clearGraph)
-        self.actionAbout.triggered.connect(self.about)
-        self.actionSave_Image.triggered.connect(self.save)
-        self.actionHelp.triggered.connect(self.help)
+        self.btn_graph.clicked.connect(self.graphFunction) # graph button
+        self.lineEdit.returnPressed.connect(self.graphFunction) # graph on 'enter'
+        self.btn_clear.setProperty('class','danger') # make clear button red
+        self.btn_clear.clicked.connect(self.clearGraph) # clear graph
+        self.actionAbout.triggered.connect(self.about) # about
+        self.actionSave_Image.triggered.connect(self.save) # save image
+        self.actionHelp.triggered.connect(self.help) # help
+        self.timer.timeout.connect(self.update_fps_counter) # update FPS counter
 
     # define custom signal functions #
 
@@ -85,3 +99,9 @@ class MyApp(QMainWindow, design_ui.Ui_MainWindow):
         help.setStandardButtons(QMessageBox.Ok)
         help.setIcon(QMessageBox.Information)
         button = help.exec()
+
+    # unimplemented fps counter update
+    def update_fps_counter(self):
+        
+        print('fps update called! (0.1 second interval)')
+        

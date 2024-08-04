@@ -54,31 +54,6 @@ class Ui_MainWindow(object):
         self.centralwidget.setStyleSheet(u"")
         self.gridLayout_2 = QGridLayout(self.centralwidget)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
-        self.graphingFrame = QFrame(self.centralwidget)
-        self.graphingFrame.setObjectName(u"graphingFrame")
-        self.graphingFrame.setFrameShape(QFrame.Shape.StyledPanel)
-        self.graphingFrame.setFrameShadow(QFrame.Shadow.Raised)
-        self.gridLayout = QGridLayout(self.graphingFrame)
-        self.gridLayout.setObjectName(u"gridLayout")
-        self.graphingCanvas = MplWidget(self.graphingFrame)
-        self.graphingCanvas.setObjectName(u"graphingCanvas")
-        self.graphingCanvas.setEnabled(True)
-        self.graphingCanvas.setCursor(QCursor(Qt.CursorShape.CrossCursor))
-
-        self.gridLayout.addWidget(self.graphingCanvas, 0, 1, 1, 1)
-
-
-        self.gridLayout_2.addWidget(self.graphingFrame, 1, 2, 5, 2)
-
-        self.label = QLabel(self.centralwidget)
-        self.label.setObjectName(u"label")
-        font = QFont()
-        font.setFamilies([u"DejaVu Math TeX Gyre"])
-        font.setBold(True)
-        self.label.setFont(font)
-
-        self.gridLayout_2.addWidget(self.label, 0, 2, 1, 1)
-
         self.btn_createFunction = QPushButton(self.centralwidget)
         self.btn_createFunction.setObjectName(u"btn_createFunction")
         self.btn_createFunction.setFocusPolicy(Qt.FocusPolicy.StrongFocus)
@@ -105,6 +80,22 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.frame, 3, 0, 3, 2)
 
+        self.graphingFrame = QFrame(self.centralwidget)
+        self.graphingFrame.setObjectName(u"graphingFrame")
+        self.graphingFrame.setFrameShape(QFrame.Shape.StyledPanel)
+        self.graphingFrame.setFrameShadow(QFrame.Shadow.Raised)
+        self.gridLayout = QGridLayout(self.graphingFrame)
+        self.gridLayout.setObjectName(u"gridLayout")
+        self.graphingCanvas = MplWidget(self.graphingFrame)
+        self.graphingCanvas.setObjectName(u"graphingCanvas")
+        self.graphingCanvas.setEnabled(True)
+        self.graphingCanvas.setCursor(QCursor(Qt.CursorShape.CrossCursor))
+
+        self.gridLayout.addWidget(self.graphingCanvas, 0, 1, 1, 1)
+
+
+        self.gridLayout_2.addWidget(self.graphingFrame, 1, 2, 5, 2)
+
         self.btn_graph = QPushButton(self.centralwidget)
         self.btn_graph.setObjectName(u"btn_graph")
         self.btn_graph.setStyleSheet(u"")
@@ -112,6 +103,20 @@ class Ui_MainWindow(object):
         self.btn_graph.setFlat(False)
 
         self.gridLayout_2.addWidget(self.btn_graph, 0, 0, 1, 2)
+
+        self.label = QLabel(self.centralwidget)
+        self.label.setObjectName(u"label")
+        font = QFont()
+        font.setFamilies([u"DejaVu Math TeX Gyre"])
+        font.setBold(True)
+        self.label.setFont(font)
+
+        self.gridLayout_2.addWidget(self.label, 0, 2, 1, 1)
+
+        self.fpsCounterLabel = QLabel(self.centralwidget)
+        self.fpsCounterLabel.setObjectName(u"fpsCounterLabel")
+
+        self.gridLayout_2.addWidget(self.fpsCounterLabel, 6, 0, 1, 1)
 
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
@@ -146,7 +151,6 @@ class Ui_MainWindow(object):
         self.actionNew_Window.setText(QCoreApplication.translate("MainWindow", u"New Window", None))
         self.actionSave_Image.setText(QCoreApplication.translate("MainWindow", u"Save Image", None))
         self.actionAbout.setText(QCoreApplication.translate("MainWindow", u"About", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"f(x):", None))
 #if QT_CONFIG(tooltip)
         self.btn_createFunction.setToolTip(QCoreApplication.translate("MainWindow", u"Click to create a new function", None))
 #endif // QT_CONFIG(tooltip)
@@ -161,6 +165,8 @@ class Ui_MainWindow(object):
         self.btn_graph.setToolTip(QCoreApplication.translate("MainWindow", u"Click to graph current function", None))
 #endif // QT_CONFIG(tooltip)
         self.btn_graph.setText(QCoreApplication.translate("MainWindow", u"Graph", None))
+        self.label.setText(QCoreApplication.translate("MainWindow", u"f(x):", None))
+        self.fpsCounterLabel.setText(QCoreApplication.translate("MainWindow", u"FPS: null", None))
         self.menuFile.setTitle(QCoreApplication.translate("MainWindow", u"File", None))
         self.menuInfo.setTitle(QCoreApplication.translate("MainWindow", u"Info", None))
     # retranslateUi

@@ -12,6 +12,7 @@ form = framework.MyApp()
 # apply style sheet
 qt_material.apply_stylesheet(app, theme='dark_yellow.xml')
 
+
 # run app
 form.show()
 app.exec()

@@ -19,7 +19,7 @@ class MyApp(QMainWindow, design_ui.Ui_MainWindow):
 
         # create timer for FPS counter
         self.timer = QTimer()
-        self.timer.setInterval(100) # 0.1 seconds
+        self.timer.setInterval(1000) # 1 second
         self.timer.start()
 
         super().__init__(parent)
@@ -52,12 +52,12 @@ class MyApp(QMainWindow, design_ui.Ui_MainWindow):
         try:
             MplCanvas.plot(textlineInput)
         except:
-            exception = QMessageBox(self)
-            exception.setWindowTitle("Error")
-            exception.setText("Error graphing function: INPUT FORMATTING ERROR.<p>Here's an example of a correctly formatted function:<p>5*x^3 + sin(3*x)")
-            exception.setStandardButtons(QMessageBox.Ok)
-            exception.setIcon(QMessageBox.Critical)
-            button = exception.exec()
+            exception_box = QMessageBox(self)
+            exception_box.setWindowTitle("Error")
+            exception_box.setText("Error graphing function: INPUT FORMATTING ERROR.<p>Here's an example of a correctly formatted function:<p>5*x^3 + sin(3*x)")
+            exception_box.setStandardButtons(QMessageBox.Ok)
+            exception_box.setIcon(QMessageBox.Critical)
+            button = exception_box.exec()
 
     # clear canvas of all plotted functions
     def clearGraph(self):
@@ -103,5 +103,4 @@ class MyApp(QMainWindow, design_ui.Ui_MainWindow):
     # unimplemented fps counter update
     def update_fps_counter(self):
         
-        print('fps update called! (0.1 second interval)')
-        
+        print('fps update called! (1 second interval)')

@@ -14,12 +14,7 @@ All of the neccessary libraries can be found in root/dependencies.txt.
 
 To install these libraries, ensure you've properly added python to path, or have a virtual environment activated (if applicable) and type the following commands:
 ```
-pip install pyside6
-pip insatll pyqt6
-pip install matplotlib
-pip install mpl_interactions
-pip install sympy
-pip install qt_material
+pip install -r requirements.txt
 ```
 
 **Please note:** If you're planning on altering the GUI in any way, It is strongly recommended you use QtDesigner as that's what this project was built around. If you're using VSCode (like I am), I recommend installing the "Qt for python" extension, as it will install QtDesigner and ensure seamless integration with VSCode.

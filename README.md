@@ -12,7 +12,7 @@ Prerequisites:
 
 All of the neccessary libraries can be found in root/dependencies.txt.
 
-To install these libraries, ensure you've properly added python to path, or have a virtual environment activated (if applicable) and type the following commands:
+To install these libraries, ensure you've properly added python to path, or have a virtual environment activated (if applicable) and type the following command into your OS's respective CLI (Windows: Command prompt, Linux: Terminal, etc.):
 ```
 pip install -r requirements.txt
 ```

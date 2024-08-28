@@ -10,7 +10,7 @@ Prerequisites:
 - Python (latest version is ideal) 
 - This project's required libraries
 
-All of the neccessary libraries can be found in root/dependencies.txt.
+All of the neccessary libraries can be found in root/requirements.txt.
 
 To install these libraries, ensure you've properly added python to path, or have a virtual environment activated (if applicable) and type the following command into your OS's respective CLI (Windows: Command prompt, Linux: Terminal, etc.):
 ```

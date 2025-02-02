@@ -3,6 +3,8 @@
 ## General Information/Usage
 A graphing calculator written in Python capable of plotting user-specifiable arbitrary mathematical functions. Currently implemented with PySide6 and matplotlib.
 
+![image](readme-docs/application.png)
+
 This program was built using pyinstaller. Therefore, you do not need to have python installed to run this program.
 
 ## Development Requirements
